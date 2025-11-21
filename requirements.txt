@@ -1,0 +1,16 @@
+numpy
+scipy
+librosa
+soundfile
+matplotlib
+pillow
+torch
+torchvision
+scikit-learn
+tqdm
+streamlit
+pyyaml
+
+
+# optional (for ffmpeg-based augmentations)
+# ffmpeg must be installed system-wide for advanced augmentations

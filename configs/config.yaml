@@ -1,0 +1,17 @@
+# Basic config for experiments
+seed: 42
+sr: 16000
+duration: 3.0 # seconds (audio will be trimmed/padded to this)
+n_mels: 64
+n_fft: 1024
+hop_length: 256
+batch_size: 32
+epochs: 15
+lr: 1e-4
+save_dir: saved
+model_name: shallow_cnn
+device: auto
+
+
+real_dir: data/real
+fake_dir: data/fake
