@@ -43,7 +43,7 @@ def main(config_path="configs/config.yaml"):
     tr = Trainer(model, device, save_dir=cfg.get("save_dir"), lr=cfg.get("lr"))
     best_path = tr.fit(train_loader, test_loader, epochs=cfg.get("epochs"))
     print("Training finished. Best model at:", best_path)
-
+     
 
 
 
