@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
 *.pth
-/saved/
+# /saved/
 .DS_Store
 .env
 venv/

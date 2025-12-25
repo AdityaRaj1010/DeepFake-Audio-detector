@@ -24,8 +24,8 @@ def main(config_path="configs/config.yaml"):
 
 
     train_loader, test_loader = make_dataloaders(
-    cfg.get("real_dir"),
-    cfg.get("fake_dir"),
+    cfg.get("real_dir"), # trained with 80405 files
+    cfg.get("fake_dir"), # trained with 84402 files
     batch_size=cfg.get("batch_size"),
     sr=cfg.get("sr"),
     duration=cfg.get("duration"),

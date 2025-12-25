@@ -46,8 +46,8 @@ def make_dataloaders(real_dir, fake_dir, batch_size=32, test_ratio=0.2,
     Returns:
         train_loader, test_loader
     """
-    real_dir = Path(real_dir)
-    fake_dir = Path(fake_dir)
+    real_dir = Path(real_dir) # trained with 80405 files
+    fake_dir = Path(fake_dir) # trained with 84402 files
 
     real_files = sorted([p for p in real_dir.glob("**/*.wav")])
     fake_files = sorted([p for p in fake_dir.glob("**/*.wav")])
