@@ -19,14 +19,14 @@ st.title("🎤 Deepfake Audio Detector — Demo")
 st.write("Upload a `.wav` file to analyze whether it's **Real or Fake**")
 
 uploaded = st.file_uploader("Upload WAV File", type=["wav"])
-model_path_input = st.text_input("Path to Model (.pth)", value="saved/best_model.pth")
-
+model_path = Path("saved/best_model.pth")
+# model_path_input = st.text_input("Path to Model (.pth)", value="saved/best_model.pth")
 if st.button("Analyze Audio"):
     if uploaded is None:
         st.warning("Please upload a WAV file.")
     else:
-        if not Path(model_path_input).is_file():
-            st.error(f"Model not found at {model_path_input}")
+        if not Path(model_path).is_file():
+            st.error(f"Model not found at {model_path}")
         else:
             # Save uploaded file temporarily
             tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".wav")
@@ -38,7 +38,7 @@ if st.button("Analyze Audio"):
             with st.spinner("Analyzing..."):
                 try:
                     # Run prediction
-                    result = predict_file(tpath, model_path_input)
+                    result = predict_file(tpath, model_path)
                     prob_real = result["probability"]
                     prob_fake = 1 - prob_real
 
